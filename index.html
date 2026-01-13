@@ -1,3 +1,11 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Espace secretary - hybrilink</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
 <!-- PWA Meta Tags -->
   <meta name="application-name" content="TheoVêt">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -10,9 +18,12 @@
   <meta name="msapplication-tap-highlight" content="no">
   <meta name="theme-color" content="#3498db">
 
-   <!-- Service Worker et mise à jour -->
+
+<!-- Service Worker et mise à jour -->
     <meta name="version" content="2.1.0">
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+
+
 
  
   <!-- Apple Touch Icons -->
@@ -1744,7 +1755,7 @@
     // Enregistrer le Service Worker immédiatement
     window.addEventListener('load', async () => {
       try {
-        const registration = await navigator.serviceWorker.register('./sw.js');
+        const registration = await navigator.serviceWorker.register('.sw.js');
         console.log('✅ Service Worker enregistré avec succès');
         
         // Vérifier les mises à jour toutes les 15 minutes
@@ -1907,7 +1918,7 @@ function showMandatoryUpdateNotification(newVersion, currentVersion, updateUrl) 
   });
 }
 
-// Vérifier les mises à jour manuellemen
+// Vérifier les mises à jour manuellement
 async function checkForUpdates() {
   try {
     const response = await fetch(`/version-check.json?t=${Date.now()}`);
